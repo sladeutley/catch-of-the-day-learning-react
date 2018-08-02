@@ -3,17 +3,10 @@ import React from "react";
 // Also, above is ES6 way of doing same thing below, I think
 // const React = require('react');
 import { render } from 'react-dom';
+import StorePicker from './components/StorePicker'
 
-// put a class as capitalized bc it indicates to us that it's a class and reusable
-// Also, every class in react needs at least one method inside it, called render, which determines what html elements do i render to the dom/page
-class StorePicker extends React.Component {
-  render() {
-    return <p>Hello!</p>;
-  }
-}
-
-render(<p>HEYYYYY</p>, document.querySelector('#main'));
+// render(<p>HEYYYYY</p>, document.querySelector('#main'));
 // could do above, but want to use the class StorePicker, so -->
 render(<StorePicker />, document.querySelector('#main'));
-// *** Note, StorePicker has a self closing tag, its the same as <StorePicker></StorePicker> 
+// *** Note, StorePicker has a self closing tag, its the same as <StorePicker></StorePicker>
 
