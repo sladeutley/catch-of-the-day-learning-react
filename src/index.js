@@ -4,6 +4,8 @@ import React from "react";
 // const React = require('react');
 import { render } from 'react-dom';
 import StorePicker from './components/StorePicker'
+// import css here instead of doing it in index.html. You can do either one though.
+import './css/style.css';
 
 // render(<p>HEYYYYY</p>, document.querySelector('#main'));
 // could do above, but want to use the class StorePicker, so -->
