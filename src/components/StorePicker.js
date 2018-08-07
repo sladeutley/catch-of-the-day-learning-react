@@ -1,4 +1,5 @@
 import React from "react";
+import { getFunName } from "../helpers"; // just using this function from helpers.js (which is just regular javascript)
 
 // put a class as capitalized bc it indicates to us that it's a class and reusable
 // Also, every class in react needs at least one method inside it, called render, which determines what html elements do i render to the dom/page
@@ -10,7 +11,8 @@ class StorePicker extends React.Component {
     return (
       <form className="store-selector">
         <h2>Please Enter A Store</h2>
-        <input type="text" required placeholder="Store Name" />
+        <input type="text" required placeholder="Store Name" defaultValue={getFunName()} /> 
+        {/* Above, must use defaultValue, not value (like in regular html), with react  */}
         <button type="submit">Visit Store -></button>
         {/* how do I make the side arrow */}
       </form>

@@ -1,3 +1,5 @@
+// ** don't need to export default, just export for some reason. Maybe bc when we import on StorePicker.js for example, we are deconstructing to only get the function we need
+
 export function formatPrice(cents) {
   return (cents / 100).toLocaleString("en-US", {
     style: "currency",
