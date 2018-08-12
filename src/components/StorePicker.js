@@ -20,7 +20,7 @@ class StorePicker extends React.Component {
     // 1. stop the form from submitting
     event.preventDefault(); //stops page from submitting
     console.log("going to store");
-    // 2. get the text from that input
+    // 2. get the text from that input - this is why we need ref!
     console.log(this);
     const storeName = this.myInput.value.value //it's value.value bc the first value is a react thing, then the second value is javascript
     // 3. change the page to /store/whatever-they-entered
