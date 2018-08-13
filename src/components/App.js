@@ -3,6 +3,7 @@ import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
+import Fish from "./Fish";
 
 class App extends React.Component {
   // creating state
@@ -35,6 +36,14 @@ class App extends React.Component {
       <div className="catch-of-the-day">
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
+          {/* Below, don't want to just repeat over an array here in list bc want it to be reusable, so need to make a component */}
+          <ul className="fishes">
+            {/* NO BUILT IN LOOPING IN JSX SO HAVE TO USE REGULAR JAVASCRIPT IN JSX. Javascript IS DENOTED BY {} in jsx, TO LOOP THROUGH ITEMS. HERE, BC NOT AN ARRAY, ***** WE MUST USE OBJECT.KEYS to get an array of the keys, so we can loop through all the keys we have --> try console logging Object.keys(this.state.fishes) to see */}
+            {console.log(Object.keys(this.state.fishes))}
+            {/* {Object.keys(this.state.fishes).map(key => <p>{key}</p>)} */}
+            {/* ******* Above is the javscript, but in react must give each item a unique identifier, and do that with something built into react called ****key, which is below along with rendering the Fish component and the fish info (using PROPS of course, bc that's how data gets passed in react!!!! AND TO MAKE DYNAMIC, HAVE TO USE BRACKET NOTATION IN details={this.state.fishes[key] BC KEY IS A VARIABLE DEFINED AS THE OBJECT"S KEY, NOT THE ACTUAL PROPERTY'S KEY*/}
+            {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]}/>)}
+          </ul>
         </div>
         <Order />
         <Inventory
